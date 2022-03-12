@@ -11,6 +11,8 @@ import requests
 CACHE_FILE = "cache_dict.json"
 OUTPUT_FILE = "output/res.json"
 
+# 缓存过期时间（单位：小时）
+EXPIRE_HOURS = 72
 
 SINGLE_REQUIRE_REG = r"^require[\s]+(.*?)[\s]+v(\S+)[\s]*.*$"
 MULTI_REQUIRE_REG = r"(.*?)[\s]+v(\S+)[\s]*.*"
@@ -113,7 +115,7 @@ def dup_mods(mods):
 def get_mod_advisories_from_cache(mod):
     """
     从缓存中获取一个库的威胁信息
-    TODO: 缓存过期、文件锁（单线程暂时没有必要）
+    # 是否要做文件锁（单线程暂时没有必要）
     :param mod: 字符串 eg: ("github.com/gin-gonic/gin v1.6.0")
     :return: advisories or None         PS: [] 表示没有威胁， None 表示没有查询过 或者 缓存失效
     """
@@ -127,6 +129,11 @@ def get_mod_advisories_from_cache(mod):
 
     cache_dict = json.loads(cache_cont)
     if mod in cache_dict:
+        time_distance = time.time() - cache_dict[mod]["time"]
+        if time_distance < 0 or time_distance > EXPIRE_HOURS * 60 * 60:
+            # 缓存过期
+            return None
+
         return cache_dict[mod]["advisories"]
 
     return None

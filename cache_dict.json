@@ -8,7 +8,7 @@
     "github.com/gin-gonic/gin v1.6.0": {
         "name": "github.com/gin-gonic/gin",
         "version": "v1.6.0",
-        "time": 1647013361.4146802,
+        "time": 1647079513.4152226,
         "advisories": [
             {
                 "source": "GHSA",
@@ -60,19 +60,19 @@
     "github.com/influxdata/influx-cli/v2 v2.2.1-0.20211129214229-4c0fae3a4c0d": {
         "name": "github.com/influxdata/influx-cli/v2",
         "version": "v2.2.1-0.20211129214229-4c0fae3a4c0d",
-        "time": 1647013356.2116046,
+        "time": 1647079514.3242984,
         "advisories": []
     },
     "gopkg.in/square/go-jose.v2 v2.3.1": {
         "name": "gopkg.in/square/go-jose.v2",
         "version": "v2.3.1",
-        "time": 1647013359.2127426,
+        "time": 1647079514.877068,
         "advisories": []
     },
     "github.com/burntsushi/toml v0.3.1": {
         "name": "github.com/burntsushi/toml",
         "version": "v0.3.1",
-        "time": 1647013862.7378805,
+        "time": 1647079512.3689818,
         "advisories": []
     }
 }
