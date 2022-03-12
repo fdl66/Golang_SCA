@@ -8,6 +8,7 @@ Golang 依赖库 安全风险分析, 协助你快速发现 Golang依赖库的安
     3. 从缓存中查询（缓存72小时自动过期），是否已经有查询结果，有的话从缓存中取出。
     4. 缓存中没有的话，需要实时的从 https://deps.dev/ 查询获取。
 
+> TODO: deps.dev 支持的语言不止Golang，所以，后面本项目会持续扩展对Rust、Java、Python、Node.js的支持
 
 
 ## 使用说明
